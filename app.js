@@ -15,7 +15,9 @@ var express     = require("express"),
 
 app.use(bodyparser.urlencoded({extended:true}))
 
-mongoose.connect("mongodb://stoyan:f1errari971\@ds247141.mlab.com:47141/campdb12");
+
+
+mongoose.connect("mongodb://stoyan:f1errari971\@ds247141.mlab.com:47141/campdb12",{useMongoClient: true});
 app.use(require("express-session")({
     secret: "Rusty is the best and cutest dog in the world",
     resave: false,
