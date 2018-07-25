@@ -97,6 +97,7 @@ app.post("/campgrounds",isLoggedIn,function(req,res){
     
  var campImage = req.body.image
  var campName = req.body.name
+ var campPrice = req.body.price
  var campDesc = req.body.descriptionn
  var author  = {
      
@@ -109,6 +110,7 @@ app.post("/campgrounds",isLoggedIn,function(req,res){
 Campground.create({
     
     name:campName,
+    price:campPrice,
     img:campImage,
     description:campDesc,
     author:author
