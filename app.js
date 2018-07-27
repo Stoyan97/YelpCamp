@@ -38,28 +38,6 @@ app.set('view engine', 'ejs');
 
 
 
-// Campground.create({
-    
-//     name:"Staaa",
-//     img:"https://cdn.pixabay.com/photo/2017/02/14/03/03/ama-dablam-2064522__340.jpg"
-    
-// },function(err,campground){
-    
-//     if(err){
-//         console.log(err)
-//     }
-//     else{
-        
-//         console.log("NEW CAMPGROUND")
-//         console.log(campground)
-//     }
-    
-// })
-
-
-//  var campgrounds = [{name: "swaglord" , image:"https://pixabay.com/get/e83db50a21f4073ed1584d05fb1d4e97e07ee3d21cac104497f8c178a4e8b0bd_340.jpg"},
-//                     {name: "staa" , image:"https://pixabay.com/get/eb35b70b2df6033ed1584d05fb1d4e97e07ee3d21cac104497f8c178a4e8b0bd_340.jpg"},
-//                   ]
 
 app.use(function(req,res,next){
     res.locals.currentUser = req.user;
@@ -190,18 +168,6 @@ app.post("/campgrounds/:id/comments",isLoggedIn, function(req, res){
    
 });
 
-// app.get("/campgrounds/:id", function(req, res){
-//     //find the campground with provided ID
-//     Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
-//         if(err){
-//             console.log(err);
-//         } else {
-//             console.log(foundCampground)
-//             //render show template with that campground
-//             res.render("show", {campground: foundCampground});
-//         }
-//     });
-// })
 
 app.get("/register",function(req, res) {
     res.render("register.ejs")
@@ -220,9 +186,7 @@ app.post("/register", function(req, res){
     })
 })
 
-// app.get("/login",function(req,res){
-//     res.render("login.ejs")
-// })
+
 
 
 app.get("/login", function(req, res){
